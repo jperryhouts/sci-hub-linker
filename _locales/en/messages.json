@@ -1,0 +1,9 @@
+{
+  "extensionDescription": {
+    "message": "Automatically replaces links to academic publications with Sci-Hub links. Also adds a toolbar button to load the current page through Sci-Hub (append the current URL to Sci-Hub)."
+  },
+
+  "extensionName": {
+    "message": "Sci-Hub Linker"
+  }
+}

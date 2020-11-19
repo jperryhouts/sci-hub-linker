@@ -1,0 +1,48 @@
+{
+  "manifest_version": 2,
+  "default_locale": "en",
+  "name": "__MSG_extensionName__",
+  "description": "__MSG_extensionDescription__",
+  "version": "0.1.0",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "{05786a95-e275-442e-946e-0aff6a6fc4be}",
+      "strict_min_version": "57.0"
+    }
+  },
+  "icons": {
+    "16": "icons/raven16.png",
+    "32": "icons/raven32.png",
+    "48": "icons/raven48.png",
+    "96": "icons/raven96.png"
+  },
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "https://en.wikipedia.org/wiki/Sci-Hub"
+  ],
+  "browser_action": {
+    "default_title": "__MSG_extensionName__"
+  },
+  "web_accessible_resources": [
+    "icons/raven*.png"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "include_globs": ["*://sci-hub.*/*"],
+      "js": ["content_scripts/remove_sidebar.js"],
+      "run_at": "document_end"
+    },
+    {
+      "matches": ["*://*/*"],
+      "js": ["content_scripts/redirect_doi.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

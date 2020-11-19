@@ -1,0 +1,9 @@
+_locales
+_locales/*
+_locales/*/*
+content_scripts
+content_scripts/*
+icons
+icons/*
+background.js
+manifest.json
